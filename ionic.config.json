@@ -1,0 +1,7 @@
+{
+  "name": "BreathingApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
