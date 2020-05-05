@@ -1,0 +1,43 @@
+{
+       		this.state.breathe_in_status ?
+       		<strong>Breathe IN
+       		<br/><CountUp end={5} delay={1} duration={6}/></strong>
+       		:
+       		<strong>HOLD
+       		<br/><CountUp end={5} delay={2} duration={10} /></strong>
+       		}
+
+
+       		{count}
+        <ReactInterval timeout={1000} enabled={true}
+          callback={() => this.setState({count: this.state.count + 1})} />
+
+
+
+
+          if(this.state.count <= 5 && this.state.count >= 0){
+			this.setState({ breathe_status: 'BREATHE IN'});
+			if( this.state.dcount == 5){
+				this.setState({ dcount: 0});
+			}
+		}
+		else if( this.state.count >=6 && this.state.count <= 9){
+			this.setState({ breathe_status: 'HOLD'});
+			if(this.state.dcount == 9){
+				this.setState({ dcount: 0});
+			}
+		else if( this.state.count >=10 && this.state.count <= 14){
+			this.setState({ breathe_status: 'BREATHE OUT'});
+			if(this.state.dcount == 14){
+				this.setState({ dcount: 0});
+			}
+		}else if( this.state.count >=15 && this.state.count <= 18){
+			this.setState({ breathe_status: 'HOLD'});
+			if(this.state.dcount == 18){
+				this.setState({ dcount: 0});
+			}
+		}
+		}else if(this.state.count >= 19) {
+			this.setState({ count: 0});
+			this.setState({dcount: 0});
+		}
