@@ -65,7 +65,7 @@
 }
 
 .audio_div {
-  margin-top: 40%;
+  margin-top: 45%;
   background-color: rgba(0, 0, 0, 0.5);
   margin-right: 25px;
   margin-left: 25px;
@@ -108,19 +108,27 @@ audio{
 
 
 .center {
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.blink_text {
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  line-height: 120px;
+  animation: blinker 1s linear infinite;
 }
 .pulse_hold {
     width: 150px;
     height: 150px;
     background: rgb(255, 60, 0);
     border-radius: 50%;
-    color: #fff;
-    font-size: 50px;
-    text-align: center;
     line-height: 150px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     animation: animate 6s linear infinite;
@@ -148,9 +156,6 @@ audio{
     height: 150px;
     background: rgb(0, 160, 0);
     border-radius: 50%;
-    color: #fff;
-    font-size: 50px;
-    text-align: center;
     line-height: 150px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     animation: animate_breathe_in 6s linear infinite;
@@ -184,15 +189,20 @@ audio{
     height: 150px;
     background: rgb(0, 160, 0);
     border-radius: 50%;
-    color: #fff;
-    font-size: 50px;
     text-align: center;
     line-height: 150px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     animation: animate_breathe_out 6s linear infinite;
 }
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 @keyframes animate_breathe_out {
+
 
     from {
         transform: scale(1);

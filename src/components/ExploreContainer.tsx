@@ -8,6 +8,10 @@ export default class ExploreContainer extends Component {
 	state = {
 		breathe: 'BREATHE IN',
 		play: true,
+		breathe_out_status: false,
+		breathe_in_hold_status: false,
+		breathe_in_status: true,
+		breathe_out_hold: false,
 		count: 0,
 		dcount: 0,
 		toggle: 0,
@@ -57,31 +61,31 @@ export default class ExploreContainer extends Component {
 		}
 		this.setState({count: this.state.count + 1});
 		this.setState({dcount: this.state.dcount + 1});
-		if(this.state.count >= 0 && this.state.count <= 5){
+		if(this.state.count >= 0 && this.state.count <= 6){
 			this.setState({ breathe_status: 'Breathe In'});
 			this.setState({ pulse_class_name: 'pulse_breathe_in'});
-			if( this.state.count == 5){
+			if( this.state.count == 6){
 				this.setState({ dcount: 0});
 			}
 		}
-		if( this.state.count >=6 && this.state.count <= 9){
+		if( this.state.count >=7 && this.state.count <= 10){
 			this.setState({ breathe_status: 'Hold'});
 			this.setState({ pulse_class_name: 'pulse_hold'});
-			if(this.state.count == 9){
+			if(this.state.count == 10){
 				this.setState({ dcount: 0});
 			}
 		}
-		if( this.state.count >=10 && this.state.count <= 14){
+		if( this.state.count >=11 && this.state.count <= 15){
 			this.setState({ breathe_status: 'Breathe Out'});
 			this.setState({ pulse_class_name: 'pulse_breathe_out'});
-			if(this.state.count == 14){
+			if(this.state.count == 15){
 				this.setState({ dcount: 0});
 			}
 		}
-		if( this.state.count >=15 && this.state.count <= 18){
+		if( this.state.count >=16 && this.state.count <= 19){
 			this.setState({ breathe_status: 'Hold'});
 			this.setState({ pulse_class_name: 'pulse_hold'});
-			if(this.state.count == 18){
+			if(this.state.count == 19){
 				this.setState({ dcount: 0});
 			}
 		}
@@ -110,7 +114,7 @@ export default class ExploreContainer extends Component {
        <div className="animation">
 
 			<div className="center">
-        		<div className={this.state.pulse_class_name}>{dcount}</div>
+        		<div className={this.state.pulse_class_name}><h3 className="blink_text">{dcount}</h3></div>
     		</div>
 
 
