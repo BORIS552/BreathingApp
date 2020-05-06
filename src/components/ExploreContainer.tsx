@@ -117,9 +117,13 @@ export default class ExploreContainer extends Component {
         		<div className={this.state.pulse_class_name}><h3 className="blink_text">{dcount}</h3></div>
     		</div>
 
-
        </div>
+       
        <div className="audio_control">
+       <div className="foot">
+     	<h3>Love for the FrontLine</h3>
+     	<p>Music by Alibi Music</p>
+     	</div>
         <audio id="myAudio" ref="audio_tag" src={"/assets/sounds/audio_file.mpeg"} loop />
         {
         	this.state.play ?
@@ -132,10 +136,7 @@ export default class ExploreContainer extends Component {
 
      </div>
 
-     <div className="foot">
-     	<h3>Love for the FrontLine</h3>
-     	<p>Music by Alibi Music</p>
-     </div>
+     
     </div>
 	);
 		
