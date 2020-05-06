@@ -34,23 +34,22 @@
   font-size: 35px;
   background-color: rgba(0, 0, 0, 0.8);
   border-top-right-radius: 10px;
-  border-top-left-radius: 10px; 
+  border-top-left-radius: 10px;
+  font-family: "Optima", cursive, sans-serif; 
 }
 
 .foot {
   margin-bottom: 10%;
 }
 
-.foot h3{
-  color: white;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font:"Roboto" sans-serif;
-
+.foot img {
+  width: 35%;
+  height: 25%;
 }
 .foot p{
   color: white;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font:"Roboto" sans-serif;
+  font-family: "Optima", cursive, sans-serif;
+  font-size: 10px;
 
 }
 
@@ -69,7 +68,7 @@
 }
 
 .audio_div {
-  margin-top: 45%;
+  margin-top: 35%;
   background-color: rgba(0, 0, 0, 0.5);
   margin-right: 25px;
   margin-left: 25px;
@@ -121,17 +120,20 @@ audio{
 }
 
 .blink_text {
+  font-family: "Optima", sans-serif;
   vertical-align: middle;
   text-align: center;
+  font-style: bold;
   color: #fff;
   font-size: 50px;
   line-height: 120px;
   animation: blinker 1s linear infinite;
 }
+
 .pulse_hold {
     width: 150px;
     height: 150px;
-    background: rgb(255, 60, 0);
+    background: rgb(168, 73, 3);
     border-radius: 50%;
     line-height: 150px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -141,16 +143,16 @@ audio{
 @keyframes animate {
 
     0% {
-        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0.7), 0 0 0 0 rgba(10, 160, 64, 0.7);
+        box-shadow: 0 0 0 0 rgba(115, 168, 83, 0.7), 0 0 0 0 rgba(115, 168, 83, 0.7);
     }
     40% {
-        box-shadow: 0 0 0 30px rgba(10, 160, 64, 0), 0 0 0 0 rgba(10, 160, 64, 0.7);
+        box-shadow: 0 0 0 50px rgba(115, 168, 83, 0), 0 0 0 0 rgba(115, 168, 83, 0.7);
     }
     80% {
-        box-shadow: 0 0 0 50px rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+        box-shadow: 0 0 0 80px rgba(115, 168, 83, 0), 0 0 0 40px rgba(115, 168, 83, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+        box-shadow: 0 0 0 0 rgba(115, 168, 83, 0), 0 0 0 40px rgba(115, 168, 83, 0);
     }
 }
 
@@ -158,11 +160,11 @@ audio{
 .pulse_breathe_in {
     width: 150px;
     height: 150px;
-    background: rgb(0, 160, 0);
+    background: rgb(115, 168, 83);
     border-radius: 50%;
     line-height: 150px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    animation: animate_breathe_in 6s linear infinite;
+    animation: animate_breathe_in 7s linear infinite;
 }
 
 @keyframes animate_breathe_in {
@@ -175,23 +177,23 @@ audio{
     }
 
     0% {
-        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0.7), 0 0 0 0 rgba(10, 160, 64, 0.7);
+        box-shadow: 0 0 0 0 rgba(115, 168, 83, 0.7), 0 0 0 0 rgba(115, 168, 83, 0.7);
     }
     40% {
-        box-shadow: 0 0 0 50px rgba(10, 160, 64, 0), 0 0 0 0 rgba(10, 160, 64, 0.7);
+        box-shadow: 0 0 0 50px rgba(115, 168, 83, 0), 0 0 0 0 rgba(115, 168, 83, 0.7);
     }
     80% {
-        box-shadow: 0 0 0 80px rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+        box-shadow: 0 0 0 80px rgba(115, 168, 83, 0), 0 0 0 40px rgba(115, 168, 83, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+        box-shadow: 0 0 0 0 rgba(115, 168, 83, 0), 0 0 0 40px rgba(115, 168, 83, 0);
     }
 }
 
 .pulse_breathe_out {
     width: 150px;
     height: 150px;
-    background: rgb(0, 160, 0);
+    background: rgb(115, 168, 83);
     border-radius: 50%;
     text-align: center;
     line-height: 150px;
@@ -216,16 +218,16 @@ audio{
     }
 
     0% {
-        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0.7), 0 0 0 0 rgba(10, 160, 64, 0.7);
+        box-shadow: 0 0 0 0 rgba(115, 168, 83, 0.7), 0 0 0 0 rgba(115, 168, 83, 0.7);
     }
     40% {
-        box-shadow: 0 0 0 50px rgba(10, 160, 64, 0), 0 0 0 0 rgba(10, 160, 64, 0.7);
+        box-shadow: 0 0 0 50px rgba(115, 168, 83, 0), 0 0 0 0 rgba(115, 168, 83, 0.7);
     }
     80% {
-        box-shadow: 0 0 0 80px rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+        box-shadow: 0 0 0 80px rgba(115, 168, 83, 0), 0 0 0 40px rgba(115, 168, 83, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+        box-shadow: 0 0 0 0 rgba(115, 168, 83, 0), 0 0 0 40px rgba(115, 168, 83, 0);
     }
 }
 

@@ -121,8 +121,10 @@ export default class ExploreContainer extends Component {
        
        <div className="audio_control">
        <div className="foot">
-     	<h3>Love for the FrontLine</h3>
-     	<p>Music by Alibi Music</p>
+     	<img src={"/assets/logo.png"} />
+     	<br/>
+     	<br/>
+     	<p>Music provided by Alibi Music</p>
      	</div>
         <audio id="myAudio" ref="audio_tag" src={"/assets/sounds/audio_file.mpeg"} loop />
         {
