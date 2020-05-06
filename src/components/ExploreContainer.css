@@ -31,9 +31,23 @@
   margin-bottom: 20%;
   color: white;
   padding: 20px;
+  font-size: 25px;
   background-color: rgba(0, 0, 0, 0.8);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px; 
+}
+
+.foot h3{
+  color: white;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font:"Roboto" sans-serif;
+
+}
+.foot p{
+  color: white;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font:"Roboto" sans-serif;
+
 }
 
 .audio_control {
@@ -42,6 +56,12 @@
    border-bottom-right-radius: 10px;
    border-bottom-left-radius: 10px;
    padding: 20px;
+}
+
+.counter {
+  color: white;
+  z-index: 1;
+  float: right;
 }
 
 .audio_div {
@@ -65,6 +85,13 @@
   outline:none;
 }
 
+.mute {
+  background-color: transparent;
+  width: 15%;
+  height: 15%;
+  outline:none;
+}
+
 audio{
   margin-left: auto;
   margin-right: auto;
@@ -78,199 +105,114 @@ audio{
 }
 
 
-#breathing-button {
-    width: 200px;
-    height: 200px;
-    padding: 20px;
-    margin: 50px auto;
-    -webkit-animation: breathing 7s ease-out infinite normal;
-    animation: breathing 7s ease-out infinite normal;
-    font-size: 24px;
-    background: #5885cb;
+
+
+.center {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pulse_hold {
+    width: 150px;
+    height: 150px;
+    background: rgb(255, 60, 0);
+    border-radius: 50%;
     color: #fff;
-    -webkit-font-smoothing: antialiased;
-    border-radius: 500px;
-    text-align: center;    
+    font-size: 50px;
+    text-align: center;
+    line-height: 150px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0.7), 0 0 0 0 rgba(10, 160, 64, 0.7);
+    }
+    40% {
+        box-shadow: 0 0 0 30px rgba(10, 160, 64, 0), 0 0 0 0 rgba(10, 160, 64, 0.7);
+    }
+    80% {
+        box-shadow: 0 0 0 50px rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+    }
+}
+
+
+.pulse_breathe_in {
+    width: 150px;
+    height: 150px;
+    background: rgb(0, 160, 0);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    line-height: 150px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: animate_breathe_in 6s linear infinite;
+}
+
+@keyframes animate_breathe_in {
+
+    from {
+        transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
     }
 
-
-@-webkit-keyframes breathing {
-  0% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  25% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  60% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  100% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
+    0% {
+        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0.7), 0 0 0 0 rgba(10, 160, 64, 0.7);
+    }
+    40% {
+        box-shadow: 0 0 0 50px rgba(10, 160, 64, 0), 0 0 0 0 rgba(10, 160, 64, 0.7);
+    }
+    80% {
+        box-shadow: 0 0 0 80px rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+    }
 }
 
-@keyframes breathing {
-  0% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  25% {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-  }
-
-  60% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-
-  100% {
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-  }
+.pulse_breathe_out {
+    width: 150px;
+    height: 150px;
+    background: rgb(0, 160, 0);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    line-height: 150px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: animate_breathe_out 6s linear infinite;
 }
 
+@keyframes animate_breathe_out {
 
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.2);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.watch-face {
-  height: 125px;
-  width: 125px;
-  animation: pulse 4s cubic-bezier(0.5, 0, 0.5, 1) alternate infinite;
-}
-
-.circle {
-  height: 125px;
-  width: 125px;
-  border-radius: 50%;
-  position: absolute;
-  mix-blend-mode: screen;
-  transform: translate(0, 0);
-  animation: center 6s infinite;
-}
-
-.circle:nth-child(odd) {
-  background: #61bea2;
-}
-
-.circle:nth-child(even) {
-  background: #529ca0;
-}
-
-.circle:nth-child(1) {
-  animation: circle-1 4s ease alternate infinite;
-}
-
-.circle:nth-child(2) {
-  animation: circle-2 4s ease alternate infinite;
-}
-
-.circle:nth-child(3) {
-  animation: circle-3 4s ease alternate infinite;
-}
-
-.circle:nth-child(4) {
-  animation: circle-4 4s ease alternate infinite;
-}
-
-.circle:nth-child(5) {
-  animation: circle-5 4s ease alternate infinite;
-}
-
-.circle:nth-child(6) {
-  animation: circle-6 4s ease alternate infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(.15) rotate(180deg);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes circle-1 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-35px, -50px);
-  }
-}
-
-@keyframes circle-2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(35px, 50px);
-  }
-}
-
-@keyframes circle-3 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-60px, 0);
-  }
-}
-
-@keyframes circle-4 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(60px, 0);
-  }
-}
-
-@keyframes circle-5 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-35px, 50px);
-  }
-}
-
-@keyframes circle-6 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(35px, -50px);
-  }
+    0% {
+        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0.7), 0 0 0 0 rgba(10, 160, 64, 0.7);
+    }
+    40% {
+        box-shadow: 0 0 0 50px rgba(10, 160, 64, 0), 0 0 0 0 rgba(10, 160, 64, 0.7);
+    }
+    80% {
+        box-shadow: 0 0 0 80px rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(10, 160, 64, 0), 0 0 0 40px rgba(10, 160, 64, 0);
+    }
 }
 
 

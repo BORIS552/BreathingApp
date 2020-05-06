@@ -4,22 +4,29 @@ import ReactInterval from 'react-interval';
 
 export default class ExploreContainer extends Component {
 
+
 	state = {
 		breathe: 'BREATHE IN',
-		play: false,
-		breathe_out_status: false,
-		breathe_in_hold_status: false,
-		breathe_in_status: true,
-		breathe_out_hold: false,
+		play: true,
 		count: 0,
 		dcount: 0,
-		breathe_status: 'BREATHE IN'
+		toggle: 0,
+		breathe_status: 'Breathe In',
+		pulse_class_name: 'pulse_breathe_in'
 	}
+	
 	
 	componenDidMount = () => {
 		this.setState({
 			breathe_in_status: true
 		});
+		this.setState({
+			play: true
+		});
+		console.log(this.state.play);
+		console.log("Play clicked");
+		const mytrack = document.getElementById('myAudio');
+		(mytrack as HTMLAudioElement).play();
 	}
 	playAudio = () => {
 		this.setState({
@@ -42,28 +49,38 @@ export default class ExploreContainer extends Component {
 	}
 
 	endBreatheIn = () => {
+		if( this.state.play && this.state.toggle == 0) {
+			console.log("Play clicked");
+			const mytrack = document.getElementById('myAudio');
+			(mytrack as HTMLAudioElement).play();
+			this.setState({ toggle: 1});
+		}
 		this.setState({count: this.state.count + 1});
 		this.setState({dcount: this.state.dcount + 1});
 		if(this.state.count >= 0 && this.state.count <= 5){
-			this.setState({ breathe_status: 'BREATHE IN'});
+			this.setState({ breathe_status: 'Breathe In'});
+			this.setState({ pulse_class_name: 'pulse_breathe_in'});
 			if( this.state.count == 5){
 				this.setState({ dcount: 0});
 			}
 		}
 		if( this.state.count >=6 && this.state.count <= 9){
-			this.setState({ breathe_status: 'HOLD'});
+			this.setState({ breathe_status: 'Hold'});
+			this.setState({ pulse_class_name: 'pulse_hold'});
 			if(this.state.count == 9){
 				this.setState({ dcount: 0});
 			}
 		}
 		if( this.state.count >=10 && this.state.count <= 14){
-			this.setState({ breathe_status: 'BREATHE OUT'});
+			this.setState({ breathe_status: 'Breathe Out'});
+			this.setState({ pulse_class_name: 'pulse_breathe_out'});
 			if(this.state.count == 14){
 				this.setState({ dcount: 0});
 			}
 		}
 		if( this.state.count >=15 && this.state.count <= 18){
-			this.setState({ breathe_status: 'HOLD'});
+			this.setState({ breathe_status: 'Hold'});
+			this.setState({ pulse_class_name: 'pulse_hold'});
 			if(this.state.count == 18){
 				this.setState({ dcount: 0});
 			}
@@ -79,28 +96,22 @@ export default class ExploreContainer extends Component {
 		const {dcount} = this.state;
 	return(
 	<div className="container">
+
      <div className="audio_div">
      
      	<div className="head">
-       		{dcount}
-       		<br/>
-     		{breathe_status}
+     		<b>{breathe_status}</b>
+
         <ReactInterval timeout={1000} enabled={true}
           callback={ this.endBreatheIn} />
        		
        </div>
        <br/>
        <div className="animation">
-       	
 
-			<div className="watch-face">
-			  <div className="circle"></div>
-			  <div className="circle"></div>
-			  <div className="circle"></div>
-			  <div className="circle"></div>
-			  <div className="circle"></div>
-			  <div className="circle"></div>
-			</div>
+			<div className="center">
+        		<div className={this.state.pulse_class_name}>{dcount}</div>
+    		</div>
 
 
        </div>
@@ -112,7 +123,14 @@ export default class ExploreContainer extends Component {
         	:
         	<button className="play" onClick={this.playAudio}><img src={"/assets/play.png"}/></button>
         }
+        
         </div>
+
+     </div>
+
+     <div className="foot">
+     	<h3>Love for the FrontLine</h3>
+     	<p>Music by Alibi Music</p>
      </div>
     </div>
 	);
